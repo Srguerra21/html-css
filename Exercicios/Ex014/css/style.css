@@ -1,0 +1,74 @@
+:root{
+  --bg:#050507;
+  --panel:#0b0b0e;
+  --muted:#9b9aa0;
+  --accent:#e07a2b;
+  --glow: rgba(224,122,43,0.12);
+  --card:#0f0e10;
+  --border: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box}
+body{
+  font-family: "EB Garamond", Georgia, 'Times New Roman', serif;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(255,255,255,0.02), transparent 5%),
+              linear-gradient(180deg, var(--bg), #09090b 60%);
+  color:#e8e6e3;
+  line-height:1.5;
+  margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+.page-wrap{max-width:1100px;margin:0 auto;padding:28px}
+
+/* Cabeçalho */
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)}
+.brand{display:flex;align-items:center;gap:14px}
+.brand h1{font-family: 'Cinzel', serif;font-size:28px;letter-spacing:2px;margin:0}
+.subtitle{font-size:12px;color:var(--muted)}
+.crest{width:42px;height:42px;border-radius:8px;background:linear-gradient(145deg,#0c0c0d,#151315);position:relative}
+.crest::after{content:'';position:absolute;inset:8px;border-radius:4px;background:linear-gradient(180deg, rgba(224,122,43,0.05), transparent);}
+.main-nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+.main-nav a:hover{color:var(--accent)}
+
+/* Hero */
+.hero{position:relative;display:flex;align-items:center;justify-content:space-between;padding:48px 30px;margin:28px 0;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);box-shadow:0 6px 30px rgba(0,0,0,0.6);overflow:hidden}
+.hero-inner{max-width:720px}
+.hero h2{font-size:40px;margin-bottom:8px}
+.hero p{color:var(--muted);max-width:60%}
+.hero-actions{margin-top:18px;display:flex;gap:12px}
+.btn{padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:#e8e6e3}
+.btn:hover{box-shadow:0 6px 30px var(--glow);transform:translateY(-2px)}
+.btn.mute{opacity:0.7}
+.ember{position:absolute;right:24px;bottom:8px;width:220px;height:220px;border-radius:50%;filter:blur(28px);background:radial-gradient(circle at 40% 40%, rgba(224,122,43,0.28), rgba(220,90,20,0.06) 30%, transparent 60%)}
+
+/* Painéis */
+.panel{padding:28px 20px;margin:22px 0;border-radius:10px;background:rgba(255,255,255,0.01);border:1px solid var(--border)}
+.dark-panel{background:#0b0b0d}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px}
+.card{background:rgba(255,255,255,0.01);padding:16px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+
+/* Armory */
+.armory-list{list-style:none;padding:0;margin:12px 0;display:flex;gap:10px;flex-wrap:wrap}
+.armory-list li{background:var(--card);padding:12px 14px;border-radius:8px;border:1px solid var(--border);min-width:170px}
+.armory-list strong{display:block}
+.armory-list span{color:var(--muted);font-size:13px}
+
+/* Shrines */
+.shrines-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:14px}
+.shrine{height:120px;border-radius:8px;background:#131213;display:flex;align-items:end;justify-content:center;padding:12px;border:1px solid rgba(255,255,255,0.02)}
+.shrine figcaption{font-size:14px;color:var(--muted)}
+
+/* Contato */
+.contact-panel{display:flex;flex-direction:column;gap:10px}
+.contact a{color:var(--accent);text-decoration:none}
+.contact a:hover{text-decoration:underline}
+
+/* Rodapé */
+.site-footer{margin-top:26px;padding:16px 0;text-align:center;color:var(--muted);border-top:1px solid var(--border)}
+
+/* Responsividade */
+@media (max-width:800px){
+  .hero{flex-direction:column;align-items:flex-start}
+  .hero p{max-width:100%}
+  .ember{display:none}
+  .brand h1{font-size:22px}
+}
