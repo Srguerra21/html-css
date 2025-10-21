@@ -13,6 +13,6 @@ main{
   max-width: 700px;
   margin: auto;
   padding: 2px;
-  border: solid darkblue;
+  border: solid rgb(2, 2, 65);
   border-radius: 20px;
 }
